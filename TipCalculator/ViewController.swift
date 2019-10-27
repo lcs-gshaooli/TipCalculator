@@ -29,11 +29,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
+    // Calculate the tip and report results
     @IBAction func calculateFivePercentTip(_ sender: Any) {
         
-        let amountOfBillAsString = textfieldAmountOfBill.text!
+        // Get the user input
+        let billAmountAsString = billAmount.text!
+        let tipPercentageAsString = tipPercetage.text!
+        let peopleCountAsString = peopleCount.text!
         
+        // Covert all values to Double data type
+        let billAmountAsDouble = Double(billAmountAsString)!
+        let tipPercentageAsDouble = Double(tipPercentageAsString)! / 100
+        let peopleCountAsDouble = Double(peopleCountAsString)!
+        
+        // Calculate total tip in dollars
+        let totalTip = billAmountAsDouble * tipPercentageAsDouble
+        
+        // Calculate tip per person in dollars
+        let tipPerPerson = totalTip / peopleCountAsDouble
+        
+        // Send the results to the view
+        totalTipInDollars.text = String(totalTip)
+        totalTipInDollars.text = "$/(totalTip)"
+        tipPerPersonInDollars.text = String (format: "$%.2f", totalTip)
+        tipPerPersonInDollars.text = string (tipPerPerson)
+        tipPerPersonInDollars.text = String (format: "$%.2f", tipPerPerson)
     }
     
 }
