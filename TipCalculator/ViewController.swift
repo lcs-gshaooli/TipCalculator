@@ -54,4 +54,69 @@ class ViewController: UIViewController {
         TipPerPerson.text = String(format: "$%.2f", tipPerPerson)
     }
     
+    @IBAction func calculateTenPercentTip(_ sender: Any) {
+        
+      // Get the user input
+        let billAmountAsString = textfieldAmountOfBill.text!
+        let peopleCountAsString = textfieldSplitTipBetweenHowManyPeople.text!
+        
+        // Covert all values to Double data type
+        let billAmountAsDouble = Double(billAmountAsString)!
+        let tipPercentageAsDouble = 0.10
+        let peopleCountAsDouble = Double(peopleCountAsString)!
+        
+        // Calculate total tip in dollars
+        let totalTip = billAmountAsDouble * tipPercentageAsDouble
+        
+        // Calculate tip per person in dollars
+        let tipPerPerson = totalTip / peopleCountAsDouble
+        
+        // Send the results to the view
+        labelTotalTip.text = String(format: "$%.2f", totalTip)
+        TipPerPerson.text = String(format: "$%.2f", tipPerPerson)
+        
+    }
+    @IBAction func calculateFiveteenPercentTip(_ sender: Any) {
+        
+        // Get the user input
+        let billAmountAsString = textfieldAmountOfBill.text!
+        let peopleCountAsString = textfieldSplitTipBetweenHowManyPeople.text!
+        
+        // Covert all values to Double data type
+        let billAmountAsDouble = Double(billAmountAsString)!
+        let tipPercentageAsDouble = 0.15
+        let peopleCountAsDouble = Double(peopleCountAsString)!
+        
+        // Calculate total tip in dollars
+        let totalTip = billAmountAsDouble * tipPercentageAsDouble
+        
+        // Calculate tip per person in dollars
+        let tipPerPerson = totalTip / peopleCountAsDouble
+        
+        // Send the results to the view
+        labelTotalTip.text = String(format: "$%.2f", totalTip)
+        TipPerPerson.text = String(format: "$%.2f", tipPerPerson)
+    }
+    
+    @IBAction func calculateTwentyPercentTip(_ sender: Any) {
+        // Get the user input
+               let billAmountAsString = textfieldAmountOfBill.text!
+               let peopleCountAsString = textfieldSplitTipBetweenHowManyPeople.text!
+               
+               // Covert all values to Double data type
+               let billAmountAsDouble = Double(billAmountAsString)!
+               let tipPercentageAsDouble = 0.20
+               let peopleCountAsDouble = Double(peopleCountAsString)!
+               
+               // Calculate total tip in dollars
+               let totalTip = billAmountAsDouble * tipPercentageAsDouble
+               
+               // Calculate tip per person in dollars
+               let tipPerPerson = totalTip / peopleCountAsDouble
+               
+               // Send the results to the view
+               labelTotalTip.text = String(format: "$%.2f", totalTip)
+               TipPerPerson.text = String(format: "$%.2f", tipPerPerson)
+        
+    }
 }
